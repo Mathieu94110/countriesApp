@@ -2,10 +2,15 @@ export interface IHomeState {
   listOfCountries: ICountriesList[];
   searchInput: string;
   filteredList: ICountriesList[];
+  listByRegions: ICountriesList[];
 }
 
 export interface SidebarProps {
-  startResearch: any;
+  startResearchByCountries: any;
+}
+
+export interface SelectProps {
+  startResearchByRegion: any;
 }
 
 export type ICountriesList = {

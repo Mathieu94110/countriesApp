@@ -1,5 +1,5 @@
 import "./countryList.scss";
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 import { CountryCard } from "../countryCard/countryCard";
 import { ICountriesList } from "../../models/types";
 
@@ -11,7 +11,7 @@ export const CountryList = ({
   filteredCountries: ICountriesList[] | [];
 }) => {
   useEffect(() => {
-    console.log(allCountries);
+    // console.log(allCountries);
   });
 
   if (!filteredCountries.length) {

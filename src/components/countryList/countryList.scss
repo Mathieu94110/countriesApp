@@ -6,7 +6,7 @@
 
 }
 
-@media only screen and (max-width: 987px) and (min-width: 700px)  {
+@media (max-width: 987px) and (min-width: 700px)  {
     .countriesListContainer{
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
@@ -14,7 +14,7 @@
 }
 }
 
-@media only screen and (max-width: 1299px) and (min-width: 988px)  {
+@media (max-width: 1299px) and (min-width: 988px)  {
     .countriesListContainer{
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;

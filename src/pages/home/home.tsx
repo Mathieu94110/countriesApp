@@ -4,6 +4,7 @@ import SearchBar from "../../components/searchbar/searchbar";
 import "./home.scss";
 import { IHomeState } from "../../models/types";
 import { ICountriesList } from "../../models/types";
+import FilterByRegion from "../../components/filterByRegion/filterByRegion";
 
 export class Home extends React.Component<any, IHomeState> {
   constructor(props: any) {
@@ -12,6 +13,7 @@ export class Home extends React.Component<any, IHomeState> {
       listOfCountries: [],
       searchInput: "",
       filteredList: [],
+      listByRegions: [],
     };
   }
   componentDidMount() {
@@ -29,7 +31,7 @@ export class Home extends React.Component<any, IHomeState> {
     }
   };
 
-  handleCallback = (searchedCountry: string): void => {
+  handleSearchCallback = (searchedCountry: string): void => {
     this.setState({ searchInput: searchedCountry });
 
     if (this.state.searchInput.length > 1) {
@@ -47,10 +49,33 @@ export class Home extends React.Component<any, IHomeState> {
     }
   };
 
+  handleSelectCallback = (searchedRegion: any): void => {
+    console.log(searchedRegion);
+    // this.setState({ searchInput: searchedRegion });
+
+    // if (this.state.searchInput.length > 1) {
+    //   const filteredCountries = this.state.listOfCountries.filter(
+    //     (country: ICountriesList) =>
+    //       Object.values(country.name)
+    //         .join("")
+    //         .toLowerCase()
+    //         .includes(searchedCountry.toString().toLowerCase())
+    //   );
+    //   this.setState({ filteredList: filteredCountries });
+    // } else {
+    //   this.setState({ filteredList: [] });
+    //   this.fetchData();
+    // }
+  };
+
   render() {
     return (
       <div className="homeContainer">
-        <SearchBar startResearch={this.handleCallback} />
+        <div className="researches-container">
+          <SearchBar startResearchByCountries={this.handleSearchCallback} />
+          <FilterByRegion startResearchByRegion={this.handleSelectCallback} />
+        </div>
+
         <CountryList
           allCountries={this.state.listOfCountries}
           filteredCountries={this.state.filteredList}

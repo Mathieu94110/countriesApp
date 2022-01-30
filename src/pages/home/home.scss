@@ -1,4 +1,26 @@
 .homeContainer{
     height: calc(100% - 64px);
+  padding: 0 4px;
+}
+.researches-container{
+    height: 120px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+
+    >input[type=text], > div select{
+        border:none;
+            box-shadow:rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+}
+
+@media (min-width:890px){
+
+.homeContainer{
   padding: 0 40px;
+}
+.researches-container{
+    justify-content: space-between;
+}
 }

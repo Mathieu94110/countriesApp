@@ -1,12 +1,14 @@
-.searbar-container{
-    height: 120px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: chocolate;
-    .searchInput{
-        width: 500px;
-        height: 40px;
-    }
+.searchInput{
+width: 150px;
+    height: 40px;
+
+}
+
+@media (min-width:890px){
+
+ .searchInput{
+         width: 500px;
+   padding: 0px 20px;
+
+}
 }

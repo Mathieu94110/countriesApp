@@ -12,20 +12,18 @@ const Searchbar = (props: SidebarProps) => {
   };
 
   const onTrigger = () => {
-    props.startResearch(filter);
+    props.startResearchByCountries(filter);
   };
 
   return (
-    <div className="searbar-container">
-      <input
-        type="text"
-        name="country"
-        placeholder="Search for a country"
-        className="searchInput"
-        value={filter}
-        onChange={searchText.bind(this)}
-      />
-    </div>
+    <input
+      type="text"
+      name="country"
+      placeholder="Search for a country"
+      className="searchInput"
+      value={filter}
+      onChange={searchText.bind(this)}
+    />
   );
 };
 
