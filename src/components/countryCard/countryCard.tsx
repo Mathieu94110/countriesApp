@@ -1,13 +1,6 @@
 import React from "react";
 import "./countryCard.scss";
-
-type CountryProps = {
-  flag: string;
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-};
+import { CountryProps } from "../../models/types";
 
 export const CountryCard = (props: React.PropsWithChildren<CountryProps>) => {
   return (

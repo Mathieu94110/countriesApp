@@ -2,18 +2,16 @@ import React from "react";
 import { CountryList } from "../../components/countryList/countryList";
 import SearchBar from "../../components/searchbar/searchbar";
 import "./home.scss";
+import { IHomeState } from "../../models/types";
+import { ICountriesList } from "../../models/types";
 
-interface IState {
-  listOfCountries: any;
-  searchInput: string;
-}
-
-export class Home extends React.Component<any, IState> {
+export class Home extends React.Component<any, IHomeState> {
   constructor(props: any) {
     super(props);
     this.state = {
       listOfCountries: [],
       searchInput: "",
+      filteredList: [],
     };
   }
   componentDidMount() {
@@ -31,20 +29,21 @@ export class Home extends React.Component<any, IState> {
     }
   };
 
-  handleCallback = (searchedCountry: string): any => {
+  handleCallback = (searchedCountry: string): void => {
     this.setState({ searchInput: searchedCountry });
 
-    if (this.state.searchInput) {
+    if (this.state.searchInput.length > 1) {
       const filteredCountries = this.state.listOfCountries.filter(
-        (country: any) =>
+        (country: ICountriesList) =>
           Object.values(country.name)
             .join("")
             .toLowerCase()
-            .includes(searchedCountry.toLowerCase())
+            .includes(searchedCountry.toString().toLowerCase())
       );
-      this.setState({ listOfCountries: filteredCountries });
+      this.setState({ filteredList: filteredCountries });
     } else {
-      return;
+      this.setState({ filteredList: [] });
+      this.fetchData();
     }
   };
 
@@ -52,7 +51,10 @@ export class Home extends React.Component<any, IState> {
     return (
       <div className="homeContainer">
         <SearchBar startResearch={this.handleCallback} />
-        <CountryList allCountries={this.state.listOfCountries} />
+        <CountryList
+          allCountries={this.state.listOfCountries}
+          filteredCountries={this.state.filteredList}
+        />
       </div>
     );
   }

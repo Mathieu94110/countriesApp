@@ -1,26 +1,30 @@
 import React from "react";
 import "./searchbar.scss";
-
-interface SidebarProps {
-  startResearch: string;
-}
+import { useState } from "react";
+import { SidebarProps } from "../../models/types";
 
 const Searchbar = (props: SidebarProps) => {
-  const onTrigger = (event: any) => {
-    props.startResearch(event.target.country.value);
-    event.preventDefault();
+  const [filter, setFilter] = useState("");
+
+  const searchText = (event: { target: HTMLInputElement }) => {
+    setFilter(event.target.value);
+    onTrigger();
+  };
+
+  const onTrigger = () => {
+    props.startResearch(filter);
   };
 
   return (
-    <div>
-      <form onSubmit={onTrigger}>
-        <input type="text" name="country" placeholder="Search for a country" />
-        <br></br>
-        <br></br>
-        <input type="submit" value="Submit" />
-        <br></br>
-        <br></br>
-      </form>
+    <div className="searbar-container">
+      <input
+        type="text"
+        name="country"
+        placeholder="Search for a country"
+        className="searchInput"
+        value={filter}
+        onChange={searchText.bind(this)}
+      />
     </div>
   );
 };
