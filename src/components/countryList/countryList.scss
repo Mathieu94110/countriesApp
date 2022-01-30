@@ -1,8 +1,32 @@
 .countriesListContainer{
 
   display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+   padding: 20px;
+}
+
+@media only screen and (max-width: 987px) and (min-width: 700px)  {
+    .countriesListContainer{
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+ padding: 15px;
+}
+}
+
+@media only screen and (max-width: 1299px) and (min-width: 988px)  {
+    .countriesListContainer{
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+ padding: 15px;
+}
+}
+
+@media (min-width:1300px){
+.countriesListContainer{
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(80px, auto);
 
 }
+}
+
+

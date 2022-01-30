@@ -1,12 +1,11 @@
 import React from "react";
 import { CountryList } from "../../components/countryList/countryList";
+import SearchBar from "../../components/searchbar/searchbar";
 import "./home.scss";
-
-/* type MyProps = {};
-type MyState = {}; */
 
 interface IState {
   listOfCountries: any;
+  searchInput: string;
 }
 
 export class Home extends React.Component<any, IState> {
@@ -14,6 +13,7 @@ export class Home extends React.Component<any, IState> {
     super(props);
     this.state = {
       listOfCountries: [],
+      searchInput: "",
     };
   }
   componentDidMount() {
@@ -31,15 +31,29 @@ export class Home extends React.Component<any, IState> {
     }
   };
 
+  handleCallback = (searchedCountry: string): any => {
+    this.setState({ searchInput: searchedCountry });
+
+    if (this.state.searchInput) {
+      const filteredCountries = this.state.listOfCountries.filter(
+        (country: any) =>
+          Object.values(country.name)
+            .join("")
+            .toLowerCase()
+            .includes(searchedCountry.toLowerCase())
+      );
+      this.setState({ listOfCountries: filteredCountries });
+    } else {
+      return;
+    }
+  };
+
   render() {
     return (
       <div className="homeContainer">
-  
+        <SearchBar startResearch={this.handleCallback} />
         <CountryList allCountries={this.state.listOfCountries} />
       </div>
     );
   }
-}
-function componentDidMount() {
-  throw new Error("Function not implemented.");
 }
