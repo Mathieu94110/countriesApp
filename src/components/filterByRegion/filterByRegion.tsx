@@ -1,30 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { SelectProps } from "../../models/types";
 import "./filterByRegion.scss";
 
 const FilterByRegion = (props: SelectProps) => {
   const [countries, setCountries] = useState([]);
 
-  useEffect(() => {
-    console.log(countries);
-  });
-
-  const filterByRegion = async (region: string) => {
-    console.log(region);
+  const filterByRegion = async (region: string): Promise<void> => {
     if (region.trim()) {
       const fetchSelect = async () => {
         const response = await fetch(
           `https://restcountries.com/v2/region/${region}`
         );
         const data = await response.json();
-        console.log(data);
         setCountries(data);
       };
       try {
         fetchSelect();
         onSelect();
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
   };

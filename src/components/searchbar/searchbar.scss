@@ -1,14 +1,28 @@
 .searchInput{
-width: 150px;
-    height: 40px;
+display: flex;
+align-items: center;
+background-color: #fff;
+width: 300px;
+padding: 5px 5px 5px 20px;
+gap: 5px;
+height: 32px;
+width: 150px
+}
 
+.searchInput input{
+    border: 0;
+background-color: transparent;
+outline: none;
+font-size: 12px;
+height: 100%;
+width: 100%;
 }
 
 @media (min-width:890px){
-
  .searchInput{
          width: 500px;
-   padding: 0px 20px;
-
+}
+.searchInput input{
+font-size: 16px;
 }
 }

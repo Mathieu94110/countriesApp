@@ -7,7 +7,7 @@ export const Details = () => {
   const [country, setCountry] = useState<any[]>([]);
   const { name } = useParams();
 
-  const fetchCountryData = async () => {
+  const fetchCountryData = async (): Promise<void> => {
     const res = await fetch(`https://restcountries.com/v2/name/${name}`);
     const data = await res.json();
     setCountry(data);

@@ -20,15 +20,18 @@ export class Home extends React.Component<any, IHomeState> {
     this.fetchData();
   }
 
-  fetchData = async () => {
+  fetchData = async (): Promise<void> => {
     try {
       const countriesList = await fetch("https://restcountries.com/v2/all");
       const formattedcountriesList = await countriesList.json();
-      console.log(formattedcountriesList);
       this.setState({ listOfCountries: formattedcountriesList });
     } catch (error) {
       console.error(error);
     }
+  };
+
+  refreshPage = () => {
+    window.location.reload();
   };
 
   handleSearchCallback = (searchedCountry: string): void => {
@@ -43,29 +46,18 @@ export class Home extends React.Component<any, IHomeState> {
             .includes(searchedCountry.toString().toLowerCase())
       );
       this.setState({ filteredList: filteredCountries });
+    } else if (
+      this.state.filteredList.length > 1 &&
+      this.state.searchInput.length === 0
+    ) {
+      this.refreshPage();
     } else {
       this.setState({ filteredList: [] });
-      this.fetchData();
     }
   };
 
   handleSelectCallback = (searchedRegion: any): void => {
-    console.log(searchedRegion);
     this.setState({ listByRegions: searchedRegion });
-
-    // if (this.state.searchInput.length > 1) {
-    //   const filteredCountries = this.state.listOfCountries.filter(
-    //     (country: ICountriesList) =>
-    //       Object.values(country.name)
-    //         .join("")
-    //         .toLowerCase()
-    //         .includes(searchedRegion.toString().toLowerCase())
-    //   );
-    //   this.setState({ filteredList: filteredCountries });
-    // } else {
-    //   this.setState({ filteredList: [] });
-    //   this.fetchData();
-    // }
   };
 
   render() {
@@ -79,7 +71,7 @@ export class Home extends React.Component<any, IHomeState> {
         <CountryList
           allCountries={this.state.listOfCountries}
           filteredCountries={this.state.filteredList}
-          // byRegions={this.state.listByRegions}
+          byRegions={this.state.listByRegions}
         />
       </div>
     );
