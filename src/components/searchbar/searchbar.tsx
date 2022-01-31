@@ -24,7 +24,6 @@ const Searchbar = (props: SidebarProps) => {
         type="text"
         name="country"
         placeholder="Search for a country"
-        // className="searchInput"
         value={filter}
         onChange={searchText.bind(this)}
       />

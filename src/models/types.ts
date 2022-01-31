@@ -1,8 +1,6 @@
 export interface IHomeState {
   listOfCountries: ICountriesList[];
   searchInput: string;
-  filteredList: ICountriesList[];
-  listByRegions: ICountriesList[];
 }
 
 export interface SidebarProps {

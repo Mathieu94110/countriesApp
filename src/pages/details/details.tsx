@@ -24,7 +24,7 @@ export const Details = () => {
           <Link to="/">
             <button className="go-back-button">
               <FontAwesomeIcon icon={faArrowLeft} />
-              <span className="go-back-button-text">Go Back</span>
+              <span className="go-back-button-text">Back</span>
             </button>
           </Link>
         </div>
