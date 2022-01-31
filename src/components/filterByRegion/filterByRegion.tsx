@@ -11,16 +11,27 @@ const FilterByRegion = (props: SelectProps) => {
 
   const filterByRegion = async (region: string) => {
     console.log(region);
-    if (region === "") return;
-    const res = await fetch(`https://restcountries.com/v2/continent/${region}`);
-    const data = await res.json();
-    await setCountries(data);
-    // onSelect();
+    if (region.trim()) {
+      const fetchSelect = async () => {
+        const response = await fetch(
+          `https://restcountries.com/v2/region/${region}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setCountries(data);
+      };
+      try {
+        fetchSelect();
+        onSelect();
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
 
-  // const onSelect = () => {
-  //   props.startResearchByRegion(countries);
-  // };
+  const onSelect = () => {
+    props.startResearchByRegion(countries);
+  };
 
   return (
     <div>

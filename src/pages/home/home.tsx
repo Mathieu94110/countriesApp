@@ -51,7 +51,7 @@ export class Home extends React.Component<any, IHomeState> {
 
   handleSelectCallback = (searchedRegion: any): void => {
     console.log(searchedRegion);
-    // this.setState({ searchInput: searchedRegion });
+    this.setState({ listByRegions: searchedRegion });
 
     // if (this.state.searchInput.length > 1) {
     //   const filteredCountries = this.state.listOfCountries.filter(
@@ -59,7 +59,7 @@ export class Home extends React.Component<any, IHomeState> {
     //       Object.values(country.name)
     //         .join("")
     //         .toLowerCase()
-    //         .includes(searchedCountry.toString().toLowerCase())
+    //         .includes(searchedRegion.toString().toLowerCase())
     //   );
     //   this.setState({ filteredList: filteredCountries });
     // } else {
@@ -79,6 +79,7 @@ export class Home extends React.Component<any, IHomeState> {
         <CountryList
           allCountries={this.state.listOfCountries}
           filteredCountries={this.state.filteredList}
+          // byRegions={this.state.listByRegions}
         />
       </div>
     );
