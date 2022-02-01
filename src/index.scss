@@ -1,5 +1,7 @@
 *{
   font-family: 'Nunito Sans', sans-serif;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 body {
@@ -10,18 +12,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 h2{
-        font-size: 20px;
+    font-size: 20px;
     font-weight: 800;
 }
 
-
 h3{
-       font-size: 16px;
-              font-weight: 600;
-              margin: 8px 0;
-                .style-italic{
-                font-weight: 300;
-                font-size: inherit;
-            }
-} 
+    font-size: 16px;
+    font-weight: 600;
+    margin: 8px 0;
+        .style-italic{
+        font-weight: 300;
+        font-size: inherit;
+      }
+}

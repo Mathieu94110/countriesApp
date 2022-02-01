@@ -11,12 +11,50 @@ export interface SelectProps {
   startResearchByRegion: any;
 }
 
-export type ICountriesList = {
+export type CountryProps = ICountriesList;
+
+export interface ICountryDetail extends ICountriesList {
+  nativeName: string;
+  subregion: string;
+  flags: {
+    png: string;
+  };
+  topLevelDomain: [string];
+  currencies: [
+    {
+      name: string;
+    }
+  ];
+  languages: [
+    {
+      name: string;
+    }
+  ];
+  borders: [string];
+}
+
+export interface ICardDetails extends ICountriesList {
+  nativeName: string;
+  subregion: string;
+  topLevelDomain: string;
+  currencie: [
+    {
+      name: string;
+    }
+  ];
+  languages: [
+    {
+      name: string;
+    }
+  ];
+
+  borders: [string];
+}
+
+export interface ICountriesList {
   flag: string;
   name: string;
-  population: number;
   region: string;
   capital: string;
-};
-
-export type CountryProps = ICountriesList;
+  population: number;
+}

@@ -1,5 +1,5 @@
 import "./countryList.scss";
-import React, { useEffect } from "react";
+import React from "react";
 import { CountryCard } from "../countryCard/countryCard";
 import { ICountriesList } from "../../models/types";
 import { NavLink } from "react-router-dom";
@@ -9,10 +9,6 @@ export const CountryList = ({
 }: {
   allCountries: ICountriesList[] | [];
 }) => {
-  useEffect(() => {
-    console.log("allCountries value =", allCountries);
-  });
-
   if (allCountries.length) {
     return (
       <div className="countriesListContainer">
@@ -33,8 +29,8 @@ export const CountryList = ({
     );
   } else {
     return (
-      <div className="countriesListContainer">
-        <p>No received data from Api!</p>
+      <div className="onLoadingContainer">
+        <h2>Loading...</h2>
       </div>
     );
   }

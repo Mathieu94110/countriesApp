@@ -8,7 +8,7 @@ const Header = () => {
     <div className="header-container">
       <h1 className="home-title">Where in the world?</h1>
       <div className="mode-container">
-        <FontAwesomeIcon icon={faMoon} />
+        <FontAwesomeIcon icon={faMoon} color="gray" />
         <h2 className="mode-title">Dark Mode</h2>
       </div>
     </div>

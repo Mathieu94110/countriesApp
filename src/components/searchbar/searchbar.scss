@@ -2,11 +2,11 @@
 display: flex;
 align-items: center;
 background-color: #fff;
-width: 300px;
+width: 310px;
 padding: 5px 5px 5px 20px;
 gap: 5px;
-height: 32px;
-width: 150px
+height: 40px;
+margin-bottom: 30px;
 }
 
 .searchInput input{
@@ -16,13 +16,16 @@ outline: none;
 font-size: 12px;
 height: 100%;
 width: 100%;
+padding-left: 10px;
 }
 
 @media (min-width:890px){
  .searchInput{
-         width: 500px;
+         width: 460px;
+         margin:0
 }
 .searchInput input{
 font-size: 16px;
+padding:0;
 }
 }

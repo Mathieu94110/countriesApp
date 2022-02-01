@@ -1,15 +1,13 @@
 .select-filter{
-    height: 42px;
-    width: 150px;
+    height: 50px;
+    width: 200px;
   
     option{
         font-weight: 600;
     }
 }
 
-
 @media (min-width:890px){
-
 .select-filter{
     width: 240px;
     padding: 4px 10px;
