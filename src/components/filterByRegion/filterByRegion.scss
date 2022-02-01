@@ -1,10 +1,11 @@
 .select-filter{
     height: 50px;
     width: 200px;
-  
-    option{
+    background-color: var(--element);
+    color: var(--color);
+      option{
         font-weight: 600;
-    }
+      }
 }
 
 @media (min-width:890px){

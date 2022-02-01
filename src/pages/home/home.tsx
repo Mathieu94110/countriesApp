@@ -1,7 +1,7 @@
 import React from "react";
+import "./home.scss";
 import { CountryList } from "../../components/countryList/countryList";
 import SearchBar from "../../components/searchbar/searchbar";
-import "./home.scss";
 import { IHomeState } from "../../models/types";
 import FilterByRegion from "../../components/filterByRegion/filterByRegion";
 
@@ -13,6 +13,7 @@ export class Home extends React.Component<any, IHomeState> {
       searchInput: "",
     };
   }
+
   componentDidMount() {
     this.fetchAllCountries();
   }

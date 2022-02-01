@@ -5,12 +5,12 @@
 }
 
 body {
-  margin: 0;
-   padding: 0;
-    background: rgba(248, 248, 248, 0.753);
-    color: #000;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h2{
@@ -26,4 +26,15 @@ h3{
         font-weight: 300;
         font-size: inherit;
       }
+}
+
+[data-theme="light"] {
+  --background: hsl(0, 0%, 98%);
+  --element: hsl(0, 0%, 100%);
+  --text: hsl(200, 15%, 8%);
+}
+[data-theme="dark"] {
+  --background: hsl(207, 26%, 17%);
+  --element: hsl(209, 23%, 22%);
+  --text: hsl(0, 0%, 100%);
 }
