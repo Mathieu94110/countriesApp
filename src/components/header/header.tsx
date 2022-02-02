@@ -19,7 +19,7 @@ const Header = () => {
         ) : (
           <>
             <FontAwesomeIcon icon={faSun} color="gray" onClick={toggleTheme} />
-            <h2 className="mode-title">Dark Mode</h2>
+            <h2 className="mode-title">Light Mode</h2>
           </>
         )}
       </div>
