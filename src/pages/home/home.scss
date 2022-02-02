@@ -1,15 +1,9 @@
-.homeContainer{
+.home-container{
   height: calc(100% - 64px);
   padding: 0 4px;
   background-color: var(--background)
 
 }
-.blackHomeContainer{
-  height: calc(100% - 64px);
-  padding: 0 4px;
-  background-color: var(--background);
-}
-
 
 .researches-container{
     height: 160px;
@@ -24,7 +18,7 @@
     }
 }
 @media (min-width:890px){
-.homeContainer{
+.home-container{
   padding: 0 40px;
 }
 .researches-container{

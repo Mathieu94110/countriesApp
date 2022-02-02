@@ -39,7 +39,7 @@ export const Details = () => {
   };
 
   return (
-    <div className="container">
+    <div>
       {country.map((item, index) => (
         <div key={index}>
           <CountryDetails

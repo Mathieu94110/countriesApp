@@ -28,10 +28,6 @@ export class Home extends React.Component<any, IHomeState> {
     }
   };
 
-  refreshPage = () => {
-    window.location.reload();
-  };
-
   handleSearchCallback = async (searchedCountry: string): Promise<void> => {
     if (searchedCountry.trim()) {
       try {
@@ -66,7 +62,7 @@ export class Home extends React.Component<any, IHomeState> {
 
   render() {
     return (
-      <div className="homeContainer">
+      <div className="home-container">
         <div className="researches-container">
           <SearchBar startResearchByCountries={this.handleSearchCallback} />
           <FilterByRegion startResearchByRegion={this.handleSelectCallback} />

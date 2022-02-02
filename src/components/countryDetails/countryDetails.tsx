@@ -18,6 +18,9 @@ export const CountryDetails = ({
   borders,
   flag,
 }: ICardDetails) => {
+  const numberWithCommas = (num: number): string => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   return (
     <>
       <div className="card-details-page-container">
@@ -60,7 +63,9 @@ export const CountryDetails = ({
                 <span className="details-content-items-left-bloc">
                   <h3>
                     Population:{" "}
-                    <span className="style-italic">{population}</span>
+                    <span className="style-italic">
+                      {numberWithCommas(population)}
+                    </span>
                   </h3>
                 </span>
                 {currencie && (

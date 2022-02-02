@@ -1,4 +1,4 @@
-.searchInput{
+.search-input{
 display: flex;
 align-items: center;
 background-color: var(--element);
@@ -9,7 +9,7 @@ height: 40px;
 margin-bottom: 30px;
 }
 
-.searchInput input{
+.search-input input{
 border: 0;
 background-color: var(--element);
 outline: none;
@@ -26,11 +26,11 @@ padding-left: 10px;
 }
 
 @media (min-width:890px){
- .searchInput{
+ .search-input{
 width: 460px;
 margin:0
 }
-.searchInput input{
+.search-input input{
 font-size: 16px;
 }
 }

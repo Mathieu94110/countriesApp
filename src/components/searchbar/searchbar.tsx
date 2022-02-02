@@ -18,7 +18,7 @@ const Searchbar = (props: SidebarProps) => {
   };
 
   return (
-    <div className="searchInput">
+    <div className="search-input">
       <FontAwesomeIcon icon={faSearch} />
       <input
         type="text"

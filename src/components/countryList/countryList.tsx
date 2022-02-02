@@ -11,7 +11,7 @@ export const CountryList = ({
 }) => {
   if (allCountries.length) {
     return (
-      <div className="countriesListContainer">
+      <div className="countries-list-container">
         {allCountries.map((country: ICountriesList) => (
           <div key={country.name}>
             <NavLink to={`/details/${country.name}`}>
@@ -29,7 +29,7 @@ export const CountryList = ({
     );
   } else {
     return (
-      <div className="onLoadingContainer">
+      <div className="on-loading-container">
         <h2>Loading...</h2>
       </div>
     );
